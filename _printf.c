@@ -5,7 +5,8 @@
 int _printf(const char *format, ...)
 {
     int i = 0;
-    
+    int r = 0;
+    int numfb;  
     va_list args;
     va_start(args, format);
 
@@ -30,17 +31,18 @@ int _printf(const char *format, ...)
             {
                 if (format[i + 1] == 's')
                 {
-                   _puts(va_arg(args, char *));
+                    r = _puts(va_arg(args, char *));
                     i++;
+                    numfb = numfb + r;
                 }
             }
         }
         
-        
+        numfb++;
         i++;
         
     }
     va_end(args);
-    return(i);
+    return(numfb);
     
 }

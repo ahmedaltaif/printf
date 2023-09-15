@@ -2,10 +2,10 @@
 
 int _puts(char *c)
 {
-    int i;
-    for (i = 0; c[i] != '\0'; i++)
+    int d;
+    for (d = 0; c[d] != '\0'; d++)
     {
-        _putchar(c[i]);
+        _putchar(c[d]);
     }
-    return(i);
+    return(d);
 }

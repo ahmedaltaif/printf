@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				{
 					r = _puts(va_arg(args, char *));
 					i++;
-					numfb = numfb + r;
+					numfb = (numfb + r) -1;
 				}
 			}
 		}
@@ -46,5 +46,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return (numfb + 1);
+	return (numfb);
 }

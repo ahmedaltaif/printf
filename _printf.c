@@ -9,9 +9,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int r = 0;
-	int numfb = 0;
+	unsigned int i = 0;
+	unsigned int r = 0;
+	unsigned int numfb = 0;
 	va_list args;
 
 	va_start(args, format);

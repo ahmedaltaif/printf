@@ -13,5 +13,7 @@ int _puts(char *c)
 	{
 		_putchar(c[d]);
 	}
+	_putchar('\n');
 	return (d);
+
 }

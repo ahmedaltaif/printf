@@ -1,5 +1,10 @@
 #include <stdarg.h>
 #include "main.h"
+/**
+ * _printf - function that print strings and char & % to stdr.
+ * @format: is a character string. The format string
+ * Return: number of byets.
+ */
 
 
 int _printf(const char *format, ...)

@@ -1,11 +1,21 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H_
+#define _PRINTF_H_
+
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 #include <unistd.h>
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
+
+#define NULL_STRING "(null)"
+
+#define PARAMS_INIT
+
+#define CONVERT_LOWERCASE 1
+#define CONVERT_UNSIGNED 2
 
 /* FLAGS */
 #define F_MINUS 1
@@ -40,6 +50,8 @@ struct fmt
  */
 
 typedef struct fmt fmt_t;
+int _putchar(char c);
+int _puts(char *c);
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,

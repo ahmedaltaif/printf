@@ -8,11 +8,13 @@
 int _puts(char *c)
 {
 	int d = 0;
-
-	for (d = 0; c[d] != '\0'; d++)
+	if (c)
 	{
-		_putchar(c[d]);
+		for (d = 0; c[d] != '\0'; d++)
+		{
+			_putchar(c[d]);
+		}
+	
 	}
 	return (d);
-
 }

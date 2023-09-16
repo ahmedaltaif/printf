@@ -7,12 +7,13 @@
 
 int _puts(char *c)
 {
-	int d = 0;
-
-	for (d = 0; c[d] != '\0'; d++)
+	unsigned int i =0;
+	while(*c)
 	{
-		_putchar(c[d]);
+		_putchar(*c++);
+		i++;
 	}
-	return (d);
+	
 
+	return (i);
 }

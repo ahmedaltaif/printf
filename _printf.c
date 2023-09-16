@@ -32,20 +32,17 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 			}
-			else
+			else if (format[i + 1] == 's')
 			{
-				if (format[i + 1] == 's')
-				{
-					r = _puts(va_arg(args, char *));
-					i++;
-					numfb = (numfb + r);
-				}
+				r = _puts(va_arg(args, char *));
+				i++;
+				numfb = (numfb + r);
+			
 			}
 		}
 		numfb++;
 		i++;
 	}
-	_putchar("\n");
 	va_end(args);
 	return (numfb);
 }

@@ -1,24 +1,11 @@
+#include <stdarg.h>
 #include "main.h"
-
-/**
- * print_buffer - prints the contents of the buffer if exist
- * @buffer: Array of chars
- * @buff_ind: index at which to add nex char,represents the length
- */
-
-void print_buffer(char[], int *buff_ind)
-{
-	if (*buff_ind > 0)
-		write(1, &buffer[0], *buff_ind);
-
-	*buff_ind = 0;
-}
-
 /**
  * _printf - function that print strings and char & % to stdr.
  * @format: is a character string. The format string
  * Return: number of byets.
  */
+
 
 int _printf(const char *format, ...)
 {

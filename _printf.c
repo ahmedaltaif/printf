@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
 		numfb++;
 		i++;
 	}
-	_putchar('\n');
 	va_end(args);
 	return (numfb);
 }

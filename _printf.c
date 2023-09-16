@@ -46,6 +46,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	_putchar('\n');
 	return (numfb);
 }

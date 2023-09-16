@@ -7,7 +7,7 @@
 
 int _puts(char *c)
 {
-	int d;
+	int d = 0 ;
 
 	for (d = 0; c[d] != '\0'; d++)
 	{

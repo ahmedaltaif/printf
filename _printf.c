@@ -1,6 +1,12 @@
 #include <stdarg.h>
 #include "main.h"
 
+/**
+ * _printf - function that produces output according to a format
+ * @format: format.
+ * by Ahmed and Namariq
+ * Return: Printed chars;
+ */
 
 int _printf(const char *format, ...)
 {

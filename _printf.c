@@ -21,27 +21,24 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 		}
-		else if (format[i] == '%')
+		else if ((format[i] == '%' && format[i + 1] == 'c'))
 		{
-			if (format[i + 1] == 'c')
-			{
-				_putchar(va_arg(args, int));
-			}
-			else if (format[i + 1] == '%')
-			{
-				_putchar('%');
-			}
-			else if (format[i + 1] == 's')
-			{
-				r = _puts(va_arg(args, char *));
-				numfb = (numfb + (r - 1));
-			
-			}
+			_putchar(va_arg(args, int));
+		}
+		else if ((format[i] == '%' && format[i + 1] == 's'))
+		{
+			r = _puts(va_arg(args, char *));
+			i++;
+			numfb = (numfb + (r - 1));
+		}
+		else if ((format[i] == '%' && format[i + 1] == '%'))
+		{
+			_putchar('%');
 		}
 		numfb++;
 		i++;
 	}
-	_putchar('')
+	_putchar('\n');
 	va_end(args);
 	return (numfb);
 }

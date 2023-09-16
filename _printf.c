@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == 'c')
 			{
 				_putchar(va_arg(args, int));
-				i++;
+				numfb++;
 			}
 			else if (format[i + 1] == '%')
 			{
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				{
 					r = _puts(va_arg(args, char *));
 					i++;
-					numfb = (numfb + r) -1;
+					numfb = (numfb + r);
 				}
 			}
 		}

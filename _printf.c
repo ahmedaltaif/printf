@@ -37,13 +37,13 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == 's')
 			{
-				r = _puts(va_arg(args, char *));
+				r = _puts(va_arg(args, char*));
 				i++;
 				numfb = (numfb + (r - 1));
 			}
 		}
 		numfb++;
 	}
-	return (numfb);
 	va_end(args);
+	return (numfb);
 }

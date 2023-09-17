@@ -1,10 +1,13 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * get_width - Calculates the width for printing
  * @format: Formatted string in which to print the arguments.
  * @i: List of arguments to be printed.
+ * @list: list of arguments
+ * is_digit - Verifies if a char is a digit
  * @va_list: list of arguments.
  *
  * Return: width.

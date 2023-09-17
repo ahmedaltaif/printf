@@ -1,10 +1,12 @@
 #include "main.h"
 
+
 /**
  * get_precision - Calculates the precision
- * be Ahmea and Namariq
+ * be Ahmed and Namariq
  * @format: formatted string
  * @i: list of arguments to be printed
+ * is_digit - Verifies if a char is a digit
  * @list: list of arguments
  *
  * Return: precision

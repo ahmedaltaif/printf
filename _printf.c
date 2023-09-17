@@ -11,12 +11,9 @@ int _printf(const char *format, ...)
 	int numfb = 0;
 	va_list args;
 
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')

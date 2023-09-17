@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 		}
 		numfb++;
 	}
-	printf("no of byet: %d\n", numfb);
 	return (numfb);
 	va_end(args);
 }

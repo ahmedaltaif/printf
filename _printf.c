@@ -17,18 +17,23 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			_putchar(format[i]);
+			numfb++;
+		}
 		else if (format[i] == '%')
 		{
 			if (format[i + 1] == '%')
 			{
 				_putchar('%');
 				i++;
+				numfb++;
 			}
 			else if (format[i + 1] == 'c')
 			{
 				_putchar(va_arg(args, int));
 				i++;
+				numfb++;
 			}
 			else if (format[i + 1] == 's')
 			{
@@ -37,7 +42,6 @@ int _printf(const char *format, ...)
 				numfb = (numfb + (r - 1));
 			}
 		}
-		numfb++;
 	}
 	return (numfb);
 	va_end(args);

@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i = 0;
-	unsigned int r = 0;
+	unsigned int r;
 	int numfb = 0;
 	va_list args;
 
@@ -17,18 +17,22 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
+		if (format == NULL)
+			return (-1);
 		if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
+			return (-1);
 		if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
+			return (-1);
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
+			numfb++;
 		}
 		else if ((format[i] == '%' && format[i + 1] == 'c'))
 		{
 			_putchar(va_arg(args, int));
 			i++;
+			numfb++;
 		}
 		else if ((format[i] == '%' && format[i + 1] == 's'))
 		{
@@ -39,12 +43,9 @@ int _printf(const char *format, ...)
 		else if ((format[i] == '%' && format[i + 1] == '%'))
 		{
 			_putchar('%');
+			numfb++;
 		}
-		numfb++;
-
 	}
-	printf("numbofis :%d\n", numfb);
 	return (numfb);
 	va_end(args);
-
 }

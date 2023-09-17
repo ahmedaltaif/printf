@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 /**
  * _printf - function that print strings and char & % to stdr.
@@ -11,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int i = 0;
 	unsigned int r = 0;
-	unsigned int numfb = 0;
+	int numfb = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -44,6 +43,8 @@ int _printf(const char *format, ...)
 		numfb++;
 
 	}
-	va_end(args);
+	printf("numbofis :%d\n", numfb);
 	return (numfb);
+	va_end(args);
+
 }

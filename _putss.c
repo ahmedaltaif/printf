@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "main.h"
 /**
  * _puts - function that print strings.

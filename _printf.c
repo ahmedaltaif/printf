@@ -23,22 +23,22 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
+			putchar(format[i]);
 		}
 		else if ((format[i] == '%' && format[i + 1] == 'c'))
 		{
-			_putchar(va_arg(args, int));
+			putchar(va_arg(args, int));
 			i++;
 		}
 		else if ((format[i] == '%' && format[i + 1] == 's'))
 		{
-			r = _puts(va_arg(args, char *));
+			r = puts(va_arg(args, char *));
 			i++;
 			numfb = (numfb + (r - 1));
 		}
 		else if ((format[i] == '%' && format[i + 1] == '%'))
 		{
-			_putchar('%');
+			putchar('%');
 		}
 		numfb++;
 

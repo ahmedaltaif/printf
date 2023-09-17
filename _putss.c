@@ -11,8 +11,10 @@ int _puts(char *c)
 
 	while (*c)
 	{
-		_putchar(*c++);
+		putchar(*c++);
 		i++;
 	}
+	
+
 	return (i);
 }

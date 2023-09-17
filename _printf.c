@@ -27,13 +27,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				i++;
-				numfb++;
 			}
 			else if (format[i + 1] == 'c')
 			{
 				_putchar(va_arg(args, int));
 				i++;
-				numfb++;
 			}
 			else if (format[i + 1] == 's')
 			{
@@ -41,6 +39,7 @@ int _printf(const char *format, ...)
 				i++;
 				numfb = (numfb + (r - 1));
 			}
+			numfb++;
 		}
 	}
 	return (numfb);

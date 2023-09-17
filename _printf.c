@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 			_putchar(format[i]);
@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		numfb++;
+		i++;
 	}
 	va_end(args);
 	return (numfb);

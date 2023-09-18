@@ -9,12 +9,11 @@ int _puttss(char *c)
 {
 	int d = 0;
 
-	if (c)
+	if (c == NULL)
+		return (-1);
+	for (d = 0; c[d] != '\0'; d++)
 	{
-		for (d = 0; c[d] != '\0'; d++)
-		{
-			_putchaarr(c[d]);
-		}
+		_putchaarr(c[d]);
 	}
 	return (d);
 }

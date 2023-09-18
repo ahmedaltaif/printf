@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <unistd.h>
-int _printff(const char *format, ...);
+int _printf(const char *format, ...);
 int _putchaarr(char c);
 int _puttss(char *c);
 #endif /* MAIN_H */

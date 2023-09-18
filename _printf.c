@@ -4,7 +4,7 @@
  * @format: is a character string. The format string
  * Return: number of byets.
  */
-int _printff(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int i = 0;
 	unsigned int r = 0;

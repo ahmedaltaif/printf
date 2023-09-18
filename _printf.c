@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	unsigned int i = 0;
 	unsigned int r = 0;
 	int numfb = 0;
+	char *s;
 	va_list args;
 
 	if (!format || (format[0] == '%' && !format[1]))
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == 's')
 			{
-				r = _puttss(va_arg(args, char *));
+				r = _puttss(s);
 				i++;
 				numfb = (numfb + (r - 1));
 			}

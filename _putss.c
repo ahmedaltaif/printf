@@ -10,7 +10,7 @@ int _puttss(char *c)
 	int d = 0;
 
 	if (c == NULL)
-		return (-1);
+		_puttss(NULL);
 	for (d = 0; c[d] != '\0'; d++)
 	{
 		_putchaarr(c[d]);

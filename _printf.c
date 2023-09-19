@@ -39,8 +39,9 @@ int _printf(const char *format, ...)
 				i++;
 				numfb = (numfb + (r - 1));
 			}
-		}
-		numfb++;
+			else
+				_putchaarr('%');
+		} numfb++;
 	}
 	return (numfb);
 	va_end(args);

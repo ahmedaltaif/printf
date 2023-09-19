@@ -23,12 +23,7 @@ int _printf(const char *format, ...)
 			_putchaarr(format[i]);
 		else if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				_putchaarr('%');
-				i++;
-			}
-			else if (format[i + 1] == 'c')
+			if (format[i + 1] == 'c')
 			{
 				_putchaarr(va_arg(args, int));
 				i++;
@@ -39,6 +34,12 @@ int _printf(const char *format, ...)
 				i++;
 				numfb = (numfb + (r - 1));
 			}
+			if (!format[i + 1])
+				return (-1);
+			if (format[i + 1] == '%')
+				i += 2;
+			else
+				i++;
 		}
 		numfb++;
 	}

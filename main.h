@@ -5,4 +5,5 @@
 int _printf(const char *format, ...);
 int _putchaarr(char c);
 int _puttss(char *c);
+int _print_un(va_list args);
 #endif /* MAIN_H */

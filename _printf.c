@@ -11,37 +11,38 @@ int _printf(const char *format, ...)
 	int numfb = 0;
 	va_list args;
 
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	while (format[i])
 	{
-		if (format[i] != '%')
-			_putchaarr(format[i]);
-		else if (format[i] == '%')
+		while (format[i] != '%' && format[i])
 		{
-			if (format[i + 1] == 'c')
-			{
-				_putchaarr(va_arg(args, int));
-				i++;
-			}
-			else if (format[i + 1] == 's')
-			{
-				r = _puttss(va_arg(args, char *));
-				i++;
-				numfb = (numfb + (r - 1));
-			}
-			if (!format[i + 1])
-				return (-1);
-			if (format[i + 1] == '%')
-				i += 2;
-			else
-				i++;
+			_putchaarr(format[i]);
+			numfb++;
+			i++;
 		}
-		numfb++;
+		if (format[i] == '\0')
+			return (-1);
+		if (format[i] == '%' && format[i + i] == 'c')
+		{
+			i += 2;
+			_putchaarr(va_arg(args, int));
+		}
+		if (format[i] == '%' && format[i + 1] == 's')
+		{
+			r = _puttss(va_arg(args, char *));
+			i += 2;
+			numfb = (numfb + (r - 1));
+		}
+		if (!format[i + 1])
+			return (0);
+		_putchaarr(format[i]);
+		if (format[i + 1] == '%')
+			i += 2;
+		else
+			i++;
+
+	numfb++;
 	}
 	return (numfb);
 	va_end(args);

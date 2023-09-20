@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				i++;
 			} else if (format[i + 1] == 'i')
 			{
-				d = _print_i(args);
+				d = _printf_i(args);
 				numfb = numfb + d;
 				i++;
 			} else

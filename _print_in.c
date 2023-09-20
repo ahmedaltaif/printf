@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * _print_i - handle "i"
+ * _printf_i - handle "i"
  * @i: integer
  * Return: num of i
  */
-int _print_i(va_list i)
+int _printf_i(va_list i)
 {
 	int num;
 	int in;

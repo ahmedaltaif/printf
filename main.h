@@ -6,5 +6,6 @@
 int _printf(const char *format, ...);
 int _putchaarr(char c);
 int _puttss(char *c);
-int _print_un(va_list args);
+int _print_i(va_list i);
+int _printf_d(va_list args);
 #endif /* MAIN_H */

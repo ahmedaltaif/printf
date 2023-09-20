@@ -8,4 +8,5 @@ int _putchaarr(char c);
 int _puttss(char *c);
 int _print_i(va_list i);
 int _printf_d(va_list args);
+int reverse_integer(int integer);
 #endif /* MAIN_H */

@@ -6,9 +6,9 @@
  */
 int _printf_d(va_list d)
 {
-	int num;
-	int dic;
-	int count = 0;
+	long int num;
+	long int dic;
+	long int count = 0;
 
 	dic = va_arg(d, int);
 	if (d != 0)

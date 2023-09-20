@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i, r, d, numfb = 0;
+	unsigned int i, r, d, x, numfb = 0;
 	va_list args;
 
 	if (!format || (format[0] == '%' && !format[1]))
@@ -38,8 +38,8 @@ int _printf(const char *format, ...)
 				i++;
 			} else if (format[i + 1] == 'i')
 			{
-				d = _printf_i(args);
-				numfb = numfb + d;
+				x = _printf_i(args);
+				numfb = numfb + x;
 				i++;
 			} else
 				_putchaarr('%');

@@ -6,31 +6,29 @@
  */
 int _printf_i(va_list i)
 {
-	int num;
-	int in;
 	int count = 0;
+	int in = va_arg(i, int);
 
-	in = va_arg(i, int);
-	if (in != 0)
+	if (in < 0)
 	{
-		if (in < 0)
-		{
-			_putchaarr('-');
-			in = -in;
-			count++;
-		}
-		in = reverse_integer(in);
-		while (in > 0)
-		{
-			num = in % 10;
-			in /= 10;
-			_putchaarr(num + '0');
-			count++;
-		}
+		_putchaarr('-');
+		in = -in;
+		count++;
 	}
-	else
+
+	if (in == 0)
 	{
-		_putchaarr(0 + '0');
+		_putchaarr('0');
+		return (count + 1);
+	}
+
+	while (in > 0)
+	{
+		int digit = in % 10;
+
+		in /= 10;
+		_putchaarr(digit + '0');
+		count++;
 	}
 	return (count);
 }
